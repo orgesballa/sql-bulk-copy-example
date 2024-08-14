@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog>
+    <changeSet id="1723542303053-11" author="(generated)">
+        <createTable tableName="TEST_DATA">
+            <column name="ID" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TEST_DATA"/>
+            </column>
+            <column name="DATA_FILE_ID" type="BIGINT"/>
+            <column name="WEIGHT_A" type="INT"/>
+            <column name="WEIGHT_B" type="INT"/>
+            <column name="WEIGHT_C" type="INT"/>
+            <column name="WEIGHT_D" type="INT"/>
+            <column name="WEIGHT_E" type="INT"/>
+        </createTable>
+        <createTable tableName="DATA_FILE">
+            <column name="ID" type="BIGINT">
+                <constraints nullable="false" autoIncrement="true" primaryKey="true" primaryKeyName="PK_DATA_FILE"/>
+            </column>
+            <column name="NAME" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
