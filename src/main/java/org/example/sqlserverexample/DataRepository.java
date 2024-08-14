@@ -31,11 +31,12 @@ public class DataRepository {
 
     @Transactional
     public void saveDataFile(String filename) {
-        jdbcTemplate.update("INSERT INTO DATA_FILE(name) VALUES(?,?)", filename);
+        jdbcTemplate.update("INSERT INTO DATA_FILE(name) VALUES(?)", filename);
     }
 
     public Long getDataFileId(String filename) {
-        return jdbcTemplate.queryForObject("SELECT id FROM DATA_FILE WHERE name = ?", Long.class, "filename");
+        List<Long> ids = jdbcTemplate.queryForList("SELECT id FROM DATA_FILE WHERE name = ?", Long.class, filename);
+        return ids.getFirst();
     }
 
     public Long getMaxId() {
